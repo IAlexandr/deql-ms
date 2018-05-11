@@ -1,2 +1,3 @@
 server/node_modules/
+server/client_build/
 *.log
