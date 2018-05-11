@@ -1,0 +1,25 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch",
+      "type": "node",
+      "protocol": "inspector",
+      "request": "launch",
+      "program": "${workspaceRoot}/server/deql-ms-server/index.js",
+      "stopOnEntry": false,
+      "args": [],
+      "cwd": "${workspaceRoot}",
+      "preLaunchTask": null,
+      "runtimeExecutable": "babel-node",
+      "runtimeArgs": ["--plugins=dynamic-import-node"],
+      "env": {
+        "NODE_ENV": "development",
+        "DEBUG": "deql*"
+      },
+      "console": "integratedTerminal",
+      "sourceMaps": true,
+      "outFiles": []
+    }
+  ]
+}

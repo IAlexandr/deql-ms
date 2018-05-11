@@ -1,11 +1,11 @@
 {
   port: "5555",
   rootApi: "/api",
-  projectName: "gis",
+  projectName: "deql-ms",
   maintenance: false,
   graphql: {
     engineApiKey: "",
-    useEngine: true,
+    useEngine: false,
   },
   redis: {
     port: 32768
