@@ -1,0 +1,37 @@
+{
+  "name": "deql-ms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client": "cd deql-ms-client && npm start",
+    "server": "set DEBUG=deql* && nodemon --ignore ./deql-ms-client --ignore ./client --exec babel-node ./deql-ms-server",
+    "ms_client_install": "cd ./deql-ms-client && npm i"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IAlexandr/deql-ms.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IAlexandr/deql-ms/issues"
+  },
+  "homepage": "https://github.com/IAlexandr/deql-ms#readme",
+  "dependencies": {
+    "deql-ms-server": "file:deql-ms-server"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.2",
+    "babel-plugin-module-resolver": "^3.1.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "eslint": "^4.19.1",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-react": "^7.7.0",
+    "graphql-voyager": "^1.0.0-rc.15",
+    "nodemon": "^1.17.4"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  port: "5555",
+  rootApi: "/api",
+  projectName: "gis",
+  maintenance: false,
+  graphql: {
+    engineApiKey: "",
+    useEngine: true,
+  },
+  redis: {
+    port: 32768
+  },
+  sequelize: {
+    options: {
+        dialect: "postgres",
+        host: "10.10.10.20",
+        port: 5432,
+        logging: false
+      },
+    username: "postgres",
+    password: "postgres",
+    dbName: "deql",
+    syncForce: true,
+    globalDbSeed: true,
+    accessDbSeed: true,
+    accessSyncForce: true
+  },
+  buildType: "prod", // dev, prod
+  NODE_ENV: "development", // development, production
+  promMonitoringHash: "001dc9bdb52d04dc20036dbd8313ed"
+}
