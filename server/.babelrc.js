@@ -6,10 +6,10 @@ module.exports = {
       {
         root: ["./"],
         alias: {
-          modules: "./deql-ms-server/modules",
-          tools: "./deql-ms-server/tools",
+          modules: "./server/deql-ms-server/modules",
+          tools: "./server/deql-ms-server/tools",
           project_server: "./server",
-          project_modules: "./modules",
+          project_modules: "./server/modules",
         }
       }
     ]

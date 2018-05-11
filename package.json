@@ -4,10 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "client": "cd deql-ms-client && npm start",
-    "server": "set DEBUG=deql* && nodemon --ignore ./deql-ms-client --ignore ./client --exec babel-node ./deql-ms-server",
-    "ms_client_install": "cd ./deql-ms-client && npm i"
+    "init": "concurrently \"npm run init_client\" \"npm run init_server\"",
+    "init_client": "cd client/deql-ms-client && npm i",
+    "init_server": "cd server && npm i",
+    "client": "cd client/deql-ms-client && npm start",
+    "server": "set DEBUG=deql* && nodemon --ignore ./client --exec babel-node ./server/deql-ms-server",
+    "start": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
