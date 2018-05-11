@@ -1,0 +1,17 @@
+{
+  "editor.formatOnSave": true,
+  "prettier.printWidth": 77,
+  "prettier.eslintIntegration": true,
+  "workbench.iconTheme": "vscode-icons",
+  "TodoParser": {
+    "include": ["js"],
+    "folderExclude": [
+      "node_modules",
+      ".vscode",
+      "static",
+      "./client/node_modules"
+    ]
+  },
+  "editor.tabSize": 2,
+  "editor.fontFamily": "Fira Code"
+}
