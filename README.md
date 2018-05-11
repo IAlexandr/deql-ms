@@ -1,7 +1,35 @@
-## deql-ms template
+## deql-ms
 
-install dependencies ms and ms-server:
-```npm i```
+The template-service (ms) includes a set for the server and client.
 
-install dependencies ms-client:
-```npm run ms_client_install```
+You can use both the server and client parts separately.
+
+The ms are tools:
+
+- [ ] Apollo Server
+- [ ] Apollo Engine
+- [ ] Express-session (connect-redis)
+- [ ] Prisma GraphQL API (Database Connector: Postgres)
+- [ ] Schema stitching
+- [ ] Apollo Client
+
+### Initializing submodules:
+
+* ```git submodule init; git submodule update```
+
+For one submodule (client/server): 
+
+* ```git submodule init server/deql-ms-server```
+
+* ```git submodule update server/deql-ms-server```
+
+### NPM commands:
+
+ ```npm run <operation>```
+
+* "init" - install dependencies: client and server,
+* "init_client",
+* "init_server",
+* "client",
+* "server",
+* "start" - run: client and server
