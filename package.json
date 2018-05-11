@@ -19,9 +19,6 @@
     "url": "https://github.com/IAlexandr/deql-ms/issues"
   },
   "homepage": "https://github.com/IAlexandr/deql-ms#readme",
-  "dependencies": {
-    "deql-ms-server": "file:deql-ms-server"
-  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.2.2",
