@@ -1,6 +1,0 @@
-[submodule "client/deql-ms-client"]
-	path = client/deql-ms-client
-	url = git@github.com:IAlexandr/deql-ms-client.git
-[submodule "deql-ms-server"]
-	path = deql-ms-server
-	url = git@github.com:IAlexandr/deql-ms-server.git
