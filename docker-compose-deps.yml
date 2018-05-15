@@ -47,3 +47,9 @@ services:
      - "6543:80"
     networks:
       - deqlms
+  msredis:
+    image: "redis"
+    container_name: msredis
+    restart: always
+    ports:
+     - "32768:6379"
