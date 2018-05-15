@@ -1,0 +1,33 @@
+# CLIENT AND SERVER
+FROM node:alpine
+
+
+WORKDIR ./client/deql-ms-client
+RUN npm install
+RUN npm run build
+
+ARG DIR=/home/deql-ms
+
+COPY ./server /home/deql-ms/server
+COPY ./package.json /home/deql-ms/package.json
+COPY ./wait-for-postgres.sh /home/deql-ms/wait-for-postgres.sh
+COPY ./wait-for-postgres.sh /home/deql-ms/wait-for-postgres.sh
+COPY ./wait-for-it.sh /home/deql-ms/wait-for-it.sh
+
+RUN apk update
+RUN apk upgrade
+RUN apk add bash
+RUN apk --update add postgresql-bdr
+
+WORKDIR $DIR
+RUN chmod +x /home/deql-ms/wait-for-postgres.sh
+RUN dos2unix /home/deql-ms/wait-for-postgres.sh
+RUN npm install
+ENV DEBUG deql*
+
+# RUN chmod +x /home/deql-ms/wait-for-it.sh
+# RUN dos2unix /home/deql-ms/wait-for-it.sh
+#CMD ["/home/deql-ms/wait-for-it.sh", "--timeout=5", "redis:6379", "etcd:4001", "rabbitmq:5672", "postgis:5434", "-s", "--", "npm", "start"]
+#CMD ["npm", "start"]
+
+CMD ["/home/deql-ms/wait-for-postgres.sh", "mspostgis", "5445", "npm start"]

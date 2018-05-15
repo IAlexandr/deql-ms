@@ -1,8 +1,8 @@
 export default {
   port: '8888',
-  projectName: "deql-ms",
+  projectName: 'deql-ms',
   graphql: {
-    engineApiKey: "service:deql-ms-server:4bBKVv14mLq7dWyaQeqfjA",
+    engineApiKey: 'service:deql-ms-server:4bBKVv14mLq7dWyaQeqfjA',
     useEngine: false,
   },
   sequelize: {
