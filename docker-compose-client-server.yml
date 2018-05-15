@@ -1,0 +1,18 @@
+version: '3'
+networks:
+  deqlms:
+    driver: bridge
+services:
+  deqlms_client_server:
+    image: "geoworks/deql-ms-client-server"
+    container_name: deqlms_client_server
+    restart: always
+    labels:
+      org.label-schema.group: "deql-ms"
+    environment:
+      db_options_host: postgis
+      DEBUG: deql*
+    ports:
+     - "4444:8888"
+    networks:
+      - deqlms

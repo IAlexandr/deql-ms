@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "client": "cd deql-ms-client && npm start",
-    "server": "set DEBUG=deql* && nodemon --ignore ./deql-ms-client --ignore ./client --exec babel-node ./deql-ms-server",
+    "server":
+      "set DEBUG=deql* && nodemon --ignore ./deql-ms-client --ignore ./client --exec babel-node ./deql-ms-server",
     "ms_client_install": "cd ./deql-ms-client && npm i"
   },
   "repository": {

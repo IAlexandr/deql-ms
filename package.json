@@ -4,12 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "init": "concurrently \"npm run init_client\" \"npm run init_server\"",
-    "init_client": "cd client/deql-ms-client && npm i",
-    "init_server": "cd server && npm i",
-    "client": "cd client/deql-ms-client && npm start",
-    "server": "set DEBUG=deql* && nodemon --ignore ./client --exec babel-node ./server/deql-ms-server",
-    "start": "concurrently \"npm run server\" \"npm run client\""
+    "init": "concurrently \"yarn run init_client\" \"yarn run init_server\"",
+    "init_client": "cd client/deql-ms-client && yarn",
+    "init_server": "cd server && yarn",
+    "client": "cd client/deql-ms-client && yarn start",
+    "server":
+      "set DEBUG=deql* && nodemon --ignore ./client --exec babel-node ./server/deql-ms-server",
+    "server_prod": "babel-node ./server/deql-ms-server",
+    "start": "concurrently \"yarn run server\" \"yarn run client\"",
+    "build":
+      "docker build -f ./dockerfile --cache-from geoworks/deql-ms -t geoworks/deql-ms .",
+    "build_client_server":
+      "docker build -f ./dockerfile-client-server --cache-from geoworks/deql-ms-client-server -t geoworks/deql-ms-client-server ."
   },
   "repository": {
     "type": "git",

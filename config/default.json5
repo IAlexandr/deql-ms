@@ -8,7 +8,8 @@
     useEngine: false,
   },
   redis: {
-    port: 32768
+    host: '10.10.10.20',
+    port: 32768,
   },
   sequelize: {
     options: {
