@@ -45,3 +45,9 @@ For one submodule (client/server):
 * "client",
 * "server",
 * "start" - run: client and server
+* "ms_deps_install" - run docker-compose-deps (prisma, postgres, pgadmin, redis, redis-commander)
+* "redis_commander" start redis-commander on port :8099
+
+### INSTALL DEPENDENCIES
+
+npm run ms_deps_install

@@ -1,0 +1,3 @@
+FROM redis
+RUN echo "set redis requirepass"
+CMD ["sh", "-c", "exec redis-server --requirepass \"redispass\""]
