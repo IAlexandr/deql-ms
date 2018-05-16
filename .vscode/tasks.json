@@ -17,6 +17,16 @@
       "type": "npm",
       "script": "build_client_server",
       "problemMatcher": []
+    },
+    {
+      "type": "npm",
+      "script": "ms_deps_install",
+      "problemMatcher": []
+    },
+    {
+      "type": "npm",
+      "script": "redis_commander",
+      "problemMatcher": []
     }
   ]
 }

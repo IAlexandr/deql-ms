@@ -15,7 +15,13 @@
     "build":
       "docker build -f ./dockerfile --cache-from geoworks/deql-ms -t geoworks/deql-ms .",
     "build_client_server":
-      "docker build -f ./dockerfile-client-server --cache-from geoworks/deql-ms-client-server -t geoworks/deql-ms-client-server ."
+      "docker build -f ./dockerfile-client-server --cache-from geoworks/deql-ms-client-server -t geoworks/deql-ms-client-server .",
+    "build_redis":
+      "docker build -f ./dockerfile-redis --cache-from geoworks/redis -t geoworks/redis .",
+    "redis_commander":
+      "docker build -f ./dockerfile-redis-commander --cache-from geoworks/redis-commander -t geoworks/redis-commander . && docker-compose -f docker-compose-redis-commander.yml up -d --build",
+    "ms_deps_install":
+      "yarn run build_redis && docker-compose -f docker-compose-deps.yml up -d --build"
   },
   "repository": {
     "type": "git",
