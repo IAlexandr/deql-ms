@@ -1,4 +1,5 @@
-import session from 'tools/express-session-sequelize';
+// import session from 'tools/express-session-sequelize';
+import session from 'tools/redis/express-session';
 import logger from 'tools/logger';
 //Выбираем базу данных
 import { init } from 'tools/db/sequelize';
