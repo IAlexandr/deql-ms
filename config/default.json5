@@ -10,6 +10,7 @@
   redis: {
     host: '10.10.10.20',
     port: 32768,
+    password: 'redispass',
   },
   sequelize: {
     options: {
