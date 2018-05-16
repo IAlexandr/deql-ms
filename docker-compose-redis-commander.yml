@@ -1,0 +1,18 @@
+version: '3'
+networks:
+  deqlms:
+    driver: bridge
+services:
+################################
+  ms-redis-commander:
+    container_name: ms-redis-commander
+    hostname: ms-redis-commander
+    image: geoworks/redis-commander:latest
+    restart: always
+    labels:
+      org.label-schema.group: "ms-deps"
+    ports:
+    - 8099:8081
+    networks:
+      - deqlms
+################################

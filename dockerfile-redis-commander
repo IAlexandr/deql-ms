@@ -1,0 +1,3 @@
+FROM node:10.1.0-alpine
+RUN npm install -g redis-commander
+CMD ["redis-commander", "--redis-host", "ms-redis", "--redis-port", "6379", "--redis-password", "redispass"]

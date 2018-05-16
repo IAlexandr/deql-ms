@@ -3,10 +3,13 @@ networks:
   deqlms:
     driver: bridge
 services:
-  msprisma:
+################################
+  ms-prisma:
     image: prismagraphql/prisma:1.8
-    container_name: msprisma
+    container_name: ms-prisma
     restart: always
+    labels:
+      org.label-schema.group: "ms-deps"
     ports:
     - "4466:4466"
     environment:
@@ -17,41 +20,51 @@ services:
         databases:
           default:
             connector: postgres
-            host: mspostgis
+            host: ms-postgis
             port: 5432
             user: mspostgis
             password: mspostgis
             migrations: true
     networks:
       - deqlms
-  mspostgis:
+################################
+  ms-postgis:
     image: "mdillon/postgis"
-    container_name: mspostgis
+    container_name: ms-postgis
     restart: always
     environment:
       POSTGRES_USER: mspostgis
       POSTGRES_PASSWORD: mspostgis
       POSTGRES_DB: prisma
+    labels:
+      org.label-schema.group: "ms-deps"
     ports:
      - "5445:5432"
     networks:
       - deqlms
-  mspgadmin:
+################################
+  ms-pgadmin:
     image: "dpage/pgadmin4"
     container_name: pgadmin
     restart: always
     environment:
       PGADMIN_DEFAULT_EMAIL: "admin"
       PGADMIN_DEFAULT_PASSWORD: "1234"
+    labels:
+      org.label-schema.group: "ms-deps"
     ports:
      - "6543:80"
     networks:
       - deqlms
-  msredis:
-    image: "redis"
-    container_name: msredis
+################################
+  ms-redis:
+    image: "geoworks/redis"
+    container_name: ms-redis
     restart: always
+    labels:
+      org.label-schema.group: "ms-deps"
     ports:
      - "32768:6379"
     networks:
       - deqlms
+################################
